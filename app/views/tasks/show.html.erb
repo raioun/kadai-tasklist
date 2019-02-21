@@ -1,6 +1,8 @@
 <h1><%= @task.id %>個目のタスク</h1>
 
-<p><%= @task.content %></p>
+<p>タスク内容：<%= @task.content %></p>
+<p>タスク発生日時<%= @task.created_at %></p>
+<p>タスク内容変更日時<%= @task.updated_at %></p>
 
 <%= link_to 'タスク一覧に戻る', tasks_path %>
 <%= link_to 'このタスクを編集する', edit_task_path(@task) %>
