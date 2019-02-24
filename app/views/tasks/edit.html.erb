@@ -1,17 +1,5 @@
 <h1><%= @task.id %>の編集ページ</h1>
 
-<%= form_for(@task) do |f| %>
-  
-  <!--<div class= "field">-->
-  <div>
-    <%= f.label :content, 'タスク' %>
-    <%= f.text_field :content %>
-  </div>
-  
-  <!--<div class= "action">-->
-  <div>
-    <%= f.submit '編集完了' %>
-  </div>
-<% end %>
+<%= render 'form', task: @task %>
 
 <%= link_to 'タスク一覧に戻る', tasks_path %>

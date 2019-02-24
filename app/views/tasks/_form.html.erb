@@ -1,0 +1,20 @@
+<%= form_for(task) do |f| %>
+  <% if task.errors.any? %>
+    <div id="error_expanation">
+      <ul>
+        <% task.errors.full_tasks.each do |task| %>
+          <li><%= task %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+    <%= f.label :status, 'ステータス' %>
+    <%= f.select :status, [ ["未着手"], ["着手中"], ["完了"] ], :prompt =>"選択してください" %>
+
+    <%= f.label :content, 'タスク' %>
+    <%= f.text_field :content %>
+  
+    <%= f.submit '追加' %>
+  
+<% end %>
